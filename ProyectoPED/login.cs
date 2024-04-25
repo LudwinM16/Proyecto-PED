@@ -38,7 +38,7 @@ namespace ProyectoPED
             string password = textBoxPassword.Text;
 
             //Consulta SQL
-            string query = "SELECT EmpleadoID, TipoEmpleado, NombreCompleto FROM Empleados WHERE Usuario = @Usuario AND Password = @Password";
+            string query = "SELECT EmpleadoID, TipoEmpleadoID, NombreCompleto FROM Empleados WHERE Usuario = @Usuario AND Password = @Password";
 
             //creamos la cnn con la bdd
 
@@ -63,17 +63,17 @@ namespace ProyectoPED
 
                             // Asignar los datos del usuario a la clase estática de sesión
                             SesionUsuarios.EmpleadoID = reader.GetInt32(0);
-                            SesionUsuarios.TipoEmpleado = reader.GetString(1);
-
+                            SesionUsuarios.TipoEmpleado = reader.GetInt32(1);
+                                
                             // Redirigir dependiendo del tipo de empleado
-                            if (SesionUsuarios.TipoEmpleado == "Admin")
+                            if (SesionUsuarios.TipoEmpleado == 2)
                             {
                                 // Redirigir a la ventana de administrador
                                 selectActionAdmin seleccionarAccion = new selectActionAdmin();
                                 seleccionarAccion.Show();
 
                             }
-                            else if (SesionUsuarios.TipoEmpleado == "Medico")
+                            else if (SesionUsuarios.TipoEmpleado == 1)
                             {
                                 // Redirigir a la ventana de médico
 

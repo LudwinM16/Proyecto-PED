@@ -11,6 +11,6 @@ namespace ProyectoPED
     public static class SesionUsuarios
     {
         public static int EmpleadoID { get; set; }
-        public static string TipoEmpleado { get; set; }
+        public static int TipoEmpleado { get; set; }
     }
 }
