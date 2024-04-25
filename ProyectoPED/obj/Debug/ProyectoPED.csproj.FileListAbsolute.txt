@@ -1,0 +1,14 @@
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\bin\Debug\ProyectoPED.exe.config
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\bin\Debug\ProyectoPED.exe
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\bin\Debug\ProyectoPED.pdb
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.csproj.AssemblyReference.cache
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.Properties.Resources.resources
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.csproj.GenerateResource.cache
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.csproj.CoreCompileInputs.cache
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.exe
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.pdb
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.agregarCitas.resources
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.agregarDoctores.resources
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.login.resources
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.agregarPacientes.resources
+C:\Users\Ludwin\Desktop\ProyectoPED\ProyectoPED\obj\Debug\ProyectoPED.selectActionAdmin.resources
