@@ -30,5 +30,12 @@ namespace ProyectoPED
             agregarPacientes adminPacientes = new agregarPacientes();
             adminPacientes.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            citasTEMP citasTEMP = new citasTEMP();
+            citasTEMP.Show();
+        }
     }
 }
