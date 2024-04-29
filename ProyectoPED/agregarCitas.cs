@@ -16,5 +16,10 @@ namespace ProyectoPED
         {
             InitializeComponent();
         }
+
+        private void agregarCitas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

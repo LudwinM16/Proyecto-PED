@@ -58,6 +58,21 @@
     <Compile Include="agregarDoctores.Designer.cs">
       <DependentUpon>agregarDoctores.cs</DependentUpon>
     </Compile>
+    <Compile Include="BDD.cs" />
+    <Compile Include="editMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editMedico.Designer.cs">
+      <DependentUpon>editMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editPaciente.Designer.cs">
+      <DependentUpon>editPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs" />
+    <Compile Include="EmpleadoFun.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +84,14 @@
     </Compile>
     <Compile Include="agregarPacientes.Designer.cs">
       <DependentUpon>agregarPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente.cs" />
+    <Compile Include="PacienteFun.cs" />
+    <Compile Include="PacientesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientesGestion.Designer.cs">
+      <DependentUpon>PacientesGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgramaMedicoDataSet.Designer.cs">
@@ -90,11 +113,20 @@
     <EmbeddedResource Include="agregarDoctores.resx">
       <DependentUpon>agregarDoctores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editMedico.resx">
+      <DependentUpon>editMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editPaciente.resx">
+      <DependentUpon>editPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="agregarPacientes.resx">
       <DependentUpon>agregarPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientesGestion.resx">
+      <DependentUpon>PacientesGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

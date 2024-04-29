@@ -27,15 +27,31 @@ namespace ProyectoPED
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            agregarPacientes adminPacientes = new agregarPacientes();
-            adminPacientes.Show();
+            //agregarPacientes adminPacientes = new agregarPacientes();
+            //adminPacientes.Show();
+            PacientesGestion pacientesGestion = new PacientesGestion();
+            pacientesGestion.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            citasTEMP citasTEMP = new citasTEMP();
-            citasTEMP.Show();
+            agregarCitas agregarCitas = new agregarCitas();
+            agregarCitas.Show();
+            //citasTEMP citasTEMP = new citasTEMP();
+            //citasTEMP.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            agregarCitas agregarCitas = new agregarCitas();
+            agregarCitas.Show();
         }
     }
 }

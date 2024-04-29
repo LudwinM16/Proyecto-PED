@@ -35,7 +35,7 @@ namespace ProyectoPED
         {
             //capturamos valores del login
             string usuario = textBoxUsuario.Text;
-            string password = textBoxPassword.Text;
+            string password = textBox1.Text;
 
             //Consulta SQL
             string query = "SELECT EmpleadoID, TipoEmpleadoID, NombreCompleto FROM Empleados WHERE Usuario = @Usuario AND Password = @Password";
@@ -93,6 +93,11 @@ namespace ProyectoPED
 
 
             }
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+            textBox1.UseSystemPasswordChar = true;
         }
     }
 }
