@@ -19,7 +19,7 @@ namespace ProyectoPED
             {
                 string query = "INSERT INTO Empleados (DUI, NombreCompleto, Estado, TipoEmpleadoID, Usuario, Password, Especialidad) " +
                "VALUES ('" + empleado.dui + "', '" + empleado.nombre + "', '" + empleado.estado + "', '" +
-               empleado.tipoEmpleado + "', '" + empleado.usuario+ "', '" + empleado.password + "', '" +
+               empleado.tipoEmpleado + "', '" + empleado.usuario + "', '" + empleado.password + "', '" +
                empleado.especialidad + "')";
                 SqlCommand comando = new SqlCommand(query, conexion);
 
@@ -57,7 +57,7 @@ namespace ProyectoPED
                     empleado.usuario = reader.GetString(5);
                     empleado.password = reader.GetString(6);
                     empleado.especialidad = reader.GetString(7);
-                   
+
 
                     Lista.Add(empleado);
                 }
@@ -65,7 +65,7 @@ namespace ProyectoPED
                 connection.Close();
                 return Lista;
             }
-            
+
         }
 
         public static int EliminarEmpleado(int id)
@@ -83,6 +83,5 @@ namespace ProyectoPED
 
             return retorno;
         }
-
     }
 }

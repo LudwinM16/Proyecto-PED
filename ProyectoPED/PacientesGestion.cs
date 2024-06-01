@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-
+using System.Globalization;
 
 namespace ProyectoPED
 {
@@ -19,13 +19,8 @@ namespace ProyectoPED
             InitializeComponent();
         }
 
-        private void PacientesGestion_Load(object sender, EventArgs e)
-        {
-            recargarScreen();
-        }
-
         private void button1_Click(object sender, EventArgs e)
-        { // Capturar los valores ingresados
+        {
             string dui = textBox1.Text;
             string nombre = textBox2.Text;
             int edad = 0;
@@ -156,7 +151,6 @@ namespace ProyectoPED
             dataGridView1.DataSource = PacienteFun.PacienteRegistro();
         }
 
-        //limpiar campos
         private void LimpiarCampos()
         {
             // Limpiar todos los campos del formulario
@@ -169,52 +163,15 @@ namespace ProyectoPED
             comboBox2.SelectedIndex = -1; // Limpiar selección en el combo box
             textBox6.Text = string.Empty;
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        /**
-        
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["dui"].Value);
-            textBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre"].Value);
-            textBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["edad"].Value);
-            textBox4.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["telefono"].Value);
-            textBox5.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["peso"].Value);
-            textBox6.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["estatura"].Value);
-            comboBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["sexo"].Value);
-            comboBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["tipoSangre"].Value);
-            label9.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["id"].Value);
-
-        }
-        **/
         public void recargarScreen()
         {
             dataGridView1.DataSource = PacienteFun.PacienteRegistro();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
-                int result = PacienteFun.EliminarPaciente(id);
-
-                if (result > 0)
-                {
-                    MessageBox.Show("Paciente Eliminado");
-                }
-                else
-                {
-                    MessageBox.Show("Error al eliminar Paciente");
-                }
-            }
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             selectActionAdmin seleccionarAccion = new selectActionAdmin();
             seleccionarAccion.Show();
@@ -226,5 +183,11 @@ namespace ProyectoPED
             editPaciente editPaciente = new editPaciente();
             editPaciente.Show();
         }
+
+        private void PacientesGestion_Load(object sender, EventArgs e)
+        {
+            recargarScreen();
+        }
     }
 }
+

@@ -17,6 +17,11 @@ namespace ProyectoPED
             InitializeComponent();
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Paciente paciente = new Paciente();
@@ -31,12 +36,12 @@ namespace ProyectoPED
             paciente.estatura = Convert.ToDecimal(textBox6.Text);
 
 
-           
-           
+
+
 
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
 
-            if(id != null)
+            if (id != null)
             {
                 int result = PacienteFun.ModificarPaciente(paciente);
 
@@ -48,7 +53,7 @@ namespace ProyectoPED
                 }
                 else
                 {
-                    MessageBox.Show("Error al Modificar al Paciente" );
+                    MessageBox.Show("Error al Modificar al Paciente");
                 }
 
                 recargarScreen();
@@ -87,19 +92,6 @@ namespace ProyectoPED
             dataGridView1.DataSource = PacienteFun.PacienteRegistro();
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["dui"].Value);
-            textBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre"].Value);
-            textBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["edad"].Value);
-            textBox4.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["telefono"].Value);
-            textBox5.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["peso"].Value);
-            textBox6.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["estatura"].Value);
-            comboBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["sexo"].Value);
-            comboBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["tipoSangre"].Value);
-           
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -117,7 +109,19 @@ namespace ProyectoPED
                     MessageBox.Show("Error al eliminar Paciente");
                 }
             }
-            
+
+        }
+
+        private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
+        {
+            textBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["dui"].Value);
+            textBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre"].Value);
+            textBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["edad"].Value);
+            textBox4.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["telefono"].Value);
+            textBox5.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["peso"].Value);
+            textBox6.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["estatura"].Value);
+            comboBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["sexo"].Value);
+            comboBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["tipoSangre"].Value);
         }
     }
 }

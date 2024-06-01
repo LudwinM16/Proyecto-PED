@@ -49,8 +49,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,7 +101,6 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -130,6 +129,7 @@
             this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Estatura";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label5
             // 
@@ -249,42 +249,40 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 398);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 420);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(982, 347);
+            this.dataGridView1.Size = new System.Drawing.Size(1038, 395);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(945, 97);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 77);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged_1);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(962, 227);
+            this.textBox7.Location = new System.Drawing.Point(951, 110);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 27;
+            this.textBox7.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(928, 54);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(179, 102);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Regresar al Menú";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // agregarPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 771);
-            this.Controls.Add(this.textBox7);
+            this.ClientSize = new System.Drawing.Size(1177, 867);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "agregarPacientes";
-            this.Opacity = 0D;
-            this.Text = "Gestión de Pacientes";
-            this.Load += new System.EventHandler(this.agregarPacientes_Load);
+            this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -317,7 +315,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button3;
     }
 }

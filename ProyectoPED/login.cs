@@ -35,7 +35,7 @@ namespace ProyectoPED
         {
             //capturamos valores del login
             string usuario = textBoxUsuario.Text;
-            string password = textBox1.Text;
+            string password = textBoxPassword.Text;
 
             //Consulta SQL
             string query = "SELECT EmpleadoID, TipoEmpleadoID, NombreCompleto FROM Empleados WHERE Usuario = @Usuario AND Password = @Password";
@@ -64,19 +64,20 @@ namespace ProyectoPED
                             // Asignar los datos del usuario a la clase estática de sesión
                             SesionUsuarios.EmpleadoID = reader.GetInt32(0);
                             SesionUsuarios.TipoEmpleado = reader.GetInt32(1);
-                                
+                            SesionUsuarios.NombreCompleto = reader.GetString(2);
+
                             // Redirigir dependiendo del tipo de empleado
                             if (SesionUsuarios.TipoEmpleado == 2)
                             {
                                 // Redirigir a la ventana de administrador
                                 selectActionAdmin seleccionarAccion = new selectActionAdmin();
                                 seleccionarAccion.Show();
-
                             }
                             else if (SesionUsuarios.TipoEmpleado == 1)
                             {
                                 // Redirigir a la ventana de médico
-
+                                FormDoctor formDoctor = new FormDoctor(SesionUsuarios.EmpleadoID, SesionUsuarios.NombreCompleto);
+                                formDoctor.Show();
                             }
 
                             this.Hide(); // Ocultar el formulario de inicio de sesión
@@ -87,17 +88,17 @@ namespace ProyectoPED
                             MessageBox.Show("Credenciales inválidas");
                         }
                     }
-
                 }
-
-
 
             }
         }
 
+
+
+
         private void login_Load(object sender, EventArgs e)
         {
-            textBox1.UseSystemPasswordChar = true;
+
         }
     }
 }

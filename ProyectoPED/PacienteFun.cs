@@ -10,7 +10,7 @@ namespace ProyectoPED
     class PacienteFun
     {
 
-           //funcion para insertar paciente
+        //funcion para insertar paciente
 
         public static int AgregarPaciente(Paciente paciente)
         {
@@ -72,43 +72,29 @@ namespace ProyectoPED
         public static int ModificarPaciente(Paciente paciente)
         {
             int result = 0;
-
-            // Utilizar una conexión y comando SQL con parámetros
             using (SqlConnection conn = BDD.ObtnerConexion())
             {
-                string query = "UPDATE Pacientes SET DUI = @dui, NombreCompleto = @nombre, Telefono = @telefono, Sexo = @sexo, " +
-                               "Edad = @edad, TipoSangre = @tipoSangre, Estatura = @estatura, Peso = @peso WHERE PacienteID = @pacienteID";
-
+                string query = "UPDATE Pacientes set DUI = '" + paciente.dui + "', NombreCompleto='" + paciente.nombre + "', Telefono='" + paciente.telefono + "', Sexo='" +
+               paciente.sexo + "', Edad='" + paciente.edad + "', TipoSangre= '" + paciente.tipoSangre + "', Estatura= '" +
+               paciente.estatura + "', Peso ='" + paciente.peso + "' where PacienteID =" + paciente.id + "";
                 SqlCommand comando = new SqlCommand(query, conn);
-
-                // Agregar parámetros con sus valores correspondientes
-                comando.Parameters.AddWithValue("@dui", paciente.dui);
-                comando.Parameters.AddWithValue("@nombre", paciente.nombre);
-                comando.Parameters.AddWithValue("@telefono", paciente.telefono);
-                comando.Parameters.AddWithValue("@sexo", paciente.sexo);
-                comando.Parameters.AddWithValue("@edad", paciente.edad);
-                comando.Parameters.AddWithValue("@tipoSangre", paciente.tipoSangre);
-                comando.Parameters.AddWithValue("@estatura", paciente.estatura);
-                comando.Parameters.AddWithValue("@peso", paciente.peso);
-                comando.Parameters.AddWithValue("@pacienteID", paciente.id);
 
                 try
                 {
-                    
+
                     result = comando.ExecuteNonQuery();
-                    Console.WriteLine("El paciente se modificó correctamente.");
                 }
                 catch (SqlException ex)
                 {
                     // Manejar la excepción, por ejemplo, registrarla o lanzarla nuevamente
                     Console.WriteLine("Error al modificar el paciente: " + ex.Message);
+                    Console.ReadLine();
                 }
                 finally
                 {
                     conn.Close();
                 }
             }
-
             return result;
         }
 
@@ -120,7 +106,7 @@ namespace ProyectoPED
 
             using (SqlConnection conexion = BDD.ObtnerConexion())
             {
-                string query = "DELETE FROM Pacientes WHERE PAcienteID = "+id+"";
+                string query = "DELETE FROM Pacientes WHERE PAcienteID = " + id + "";
                 SqlCommand comando = new SqlCommand(query, conexion);
 
 

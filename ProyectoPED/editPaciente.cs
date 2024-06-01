@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-
 namespace ProyectoPED
 {
     public partial class editPaciente : Form
@@ -18,52 +17,6 @@ namespace ProyectoPED
         public editPaciente()
         {
             InitializeComponent();
-        }
-
-        //boton de menu
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            selectActionAdmin seleccionarAccion = new selectActionAdmin();
-            seleccionarAccion.Show();
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["dui"].Value);
-            textBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre"].Value);
-            textBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["edad"].Value);
-            textBox4.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["telefono"].Value);
-            textBox5.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["peso"].Value);
-            textBox6.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["estatura"].Value);
-            comboBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["sexo"].Value);
-            comboBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["tipoSangre"].Value);
-            textBox7.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["id"].Value);
-        }
-
-        private void LimpiarCampos()
-        {
-            // Limpiar todos los campos del formulario
-            textBox1.Text = string.Empty;
-            textBox2.Text = string.Empty;
-            textBox3.Text = string.Empty;
-            textBox4.Text = string.Empty;
-            comboBox1.SelectedIndex = -1; // Limpiar selección en el combo box
-            textBox5.Text = string.Empty;
-            comboBox2.SelectedIndex = -1; // Limpiar selección en el combo box
-            textBox6.Text = string.Empty;
-        }
-
-        private void editPaciente_Load(object sender, EventArgs e)
-        {
-            textBox7.Enabled = false;
-            recargarScreen();
-        }
-
-        public void recargarScreen()
-        {
-            dataGridView1.DataSource = PacienteFun.PacienteRegistro();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -164,20 +117,12 @@ namespace ProyectoPED
             recargarScreen();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            PacientesGestion pacientesGestion = new PacientesGestion();
-            pacientesGestion.Show();
-        }
-
-        // eliminar paciente
         private void button2_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
             int result = PacienteFun.EliminarPaciente(id);
 
-            if(result > 0)
+            if (result > 0)
             {
                 MessageBox.Show("Paciente Eliminado con Exito");
                 LimpiarCampos();
@@ -188,6 +133,60 @@ namespace ProyectoPED
                 LimpiarCampos();
             }
 
+            recargarScreen();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            selectActionAdmin seleccionarAccion = new selectActionAdmin();
+            seleccionarAccion.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            PacientesGestion pacientesGestion = new PacientesGestion();
+            pacientesGestion.Show();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            textBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["dui"].Value);
+            textBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre"].Value);
+            textBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["edad"].Value);
+            textBox4.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["telefono"].Value);
+            textBox5.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["peso"].Value);
+            textBox6.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["estatura"].Value);
+            comboBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["sexo"].Value);
+            comboBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["tipoSangre"].Value);
+            textBox7.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["id"].Value);
+        }
+
+        private void LimpiarCampos()
+        {
+            // Limpiar todos los campos del formulario
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            textBox4.Text = string.Empty;
+            comboBox1.SelectedIndex = -1; // Limpiar selección en el combo box
+            textBox5.Text = string.Empty;
+            comboBox2.SelectedIndex = -1; // Limpiar selección en el combo box
+            textBox6.Text = string.Empty;
+        }
+
+        public void recargarScreen()
+        {
+            dataGridView1.DataSource = PacienteFun.PacienteRegistro();
+        }
+
+        private void editPaciente_Load(object sender, EventArgs e)
+        {
+
+            textBox7.Enabled = false;
             recargarScreen();
         }
     }

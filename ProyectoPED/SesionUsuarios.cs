@@ -12,5 +12,7 @@ namespace ProyectoPED
     {
         public static int EmpleadoID { get; set; }
         public static int TipoEmpleado { get; set; }
+
+        public static string NombreCompleto { get; set; }
     }
 }

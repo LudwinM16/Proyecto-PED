@@ -17,30 +17,9 @@ namespace ProyectoPED
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            {
-                if (dataGridView1.SelectedRows.Count == 1)
-                {
-                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
-                    int result = EmpleadoFun.EliminarEmpleado(id);
 
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Empleado Eliminado");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar Empleado");
-                    }
-                }
-
-            }
-        }
-
-        private void agregarDoctores_Load(object sender, EventArgs e)
-        {
-            recargarScreen();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -114,6 +93,35 @@ namespace ProyectoPED
                 MessageBox.Show("Error al guardar al empleado.");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            {
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
+                    int result = EmpleadoFun.EliminarEmpleado(id);
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Empleado Eliminado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar Empleado");
+                    }
+                }
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            selectActionAdmin seleccionarAccion = new selectActionAdmin();
+            seleccionarAccion.Show();
+        }
+
         private bool IsValidDUI(string dui)
         {
             return System.Text.RegularExpressions.Regex.IsMatch(dui, @"^\d{8}-\d$");
@@ -134,45 +142,15 @@ namespace ProyectoPED
             textBox4.Text = string.Empty; // Contraseña
             comboBox3.SelectedIndex = -1; // Especialidad
         }
-     
 
-
-        private void agregarPacientes_Load(object sender, EventArgs e)
+        private void agregarDoctores_Load(object sender, EventArgs e)
         {
-           
             recargarScreen();
         }
-
 
         public void recargarScreen()
         {
             dataGridView1.DataSource = EmpleadoFun.EmpleadoRegistro();
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["dui"].Value);
-            textBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["nombre"].Value);
-            comboBox1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["estado"].Value);
-            comboBox2.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["tipoEmpleado"].Value);
-            textBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["usuario"].Value);
-            textBox4.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["password"].Value);
-            comboBox3.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["especialidad"].Value);
-          
-
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            selectActionAdmin seleccionarAccion = new selectActionAdmin();
-            seleccionarAccion.Show();
         }
     }
 }

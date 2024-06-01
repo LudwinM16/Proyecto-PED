@@ -17,18 +17,18 @@ namespace ProyectoPED
 
         public string nombre { get; set; }
 
-        public int estado{ get; set; }
+        public int estado { get; set; }
 
-        public int tipoEmpleado{ get; set; }
+        public int tipoEmpleado { get; set; }
 
 
         public string usuario { get; set; }
 
-        public string password{ get; set; }
+        public string password { get; set; }
 
         public string especialidad { get; set; }
 
-       
+
 
         //constructor
 

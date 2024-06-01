@@ -59,12 +59,6 @@
       <DependentUpon>agregarDoctores.cs</DependentUpon>
     </Compile>
     <Compile Include="BDD.cs" />
-    <Compile Include="editMedico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="editMedico.Designer.cs">
-      <DependentUpon>editMedico.cs</DependentUpon>
-    </Compile>
     <Compile Include="editPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +67,30 @@
     </Compile>
     <Compile Include="Empleado.cs" />
     <Compile Include="EmpleadoFun.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoctor.Designer.cs">
+      <DependentUpon>FormDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistorialMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistorialMedico.Designer.cs">
+      <DependentUpon>FormHistorialMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionarCitas.Designer.cs">
+      <DependentUpon>GestionarCitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +131,20 @@
     <EmbeddedResource Include="agregarDoctores.resx">
       <DependentUpon>agregarDoctores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editMedico.resx">
-      <DependentUpon>editMedico.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="editPaciente.resx">
       <DependentUpon>editPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoctor.resx">
+      <DependentUpon>FormDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistorialMedico.resx">
+      <DependentUpon>FormHistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionarCitas.resx">
+      <DependentUpon>GestionarCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

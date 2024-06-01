@@ -13,7 +13,7 @@ namespace ProyectoPED
 
         public int id { get; set; }
 
-        public string dui {get; set;}
+        public string dui { get; set; }
 
         public string nombre { get; set; }
 
